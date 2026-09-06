@@ -4,9 +4,17 @@ import { AppService } from './app.service';
 import { SchedulerModule } from './scheduler/scheduler.module';
 import { CronModule } from './cron/cron.module';
 import { FibonacciModule } from './fibonacci/fibonacci.module';
+import { EventEmitterModule } from '@nestjs/event-emitter';
+import { PaymentsModule } from './payments/payments.module';
 
 @Module({
-  imports: [SchedulerModule, CronModule, FibonacciModule],
+  imports: [
+    SchedulerModule,
+    CronModule,
+    FibonacciModule,
+    EventEmitterModule.forRoot({}),
+    PaymentsModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
