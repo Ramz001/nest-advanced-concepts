@@ -6,6 +6,8 @@ import { CronModule } from './cron/cron.module';
 import { FibonacciModule } from './fibonacci/fibonacci.module';
 import { EventEmitterModule } from '@nestjs/event-emitter';
 import { PaymentsModule } from './payments/payments.module';
+import { DataSourceModule } from './data-source/data-source.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { PaymentsModule } from './payments/payments.module';
     FibonacciModule,
     EventEmitterModule.forRoot({}),
     PaymentsModule,
+    DataSourceModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
