@@ -1,4 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable, Scope } from '@nestjs/common';
+import { REQUEST } from '@nestjs/core';
 
-@Injectable()
-export class DataSourceService {}
+@Injectable({ scope: Scope.REQUEST })
+export class DataSourceService {
+  constructor(@Inject(REQUEST) private readonly requestContext: unknown) {}
+}
