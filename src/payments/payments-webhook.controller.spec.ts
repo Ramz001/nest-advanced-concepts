@@ -9,7 +9,9 @@ describe('PaymentsWebhookController', () => {
       controllers: [PaymentsWebhookController],
     }).compile();
 
-    controller = module.get<PaymentsWebhookController>(PaymentsWebhookController);
+    controller = module.get<PaymentsWebhookController>(
+      PaymentsWebhookController,
+    );
   });
 
   it('should be defined', () => {
