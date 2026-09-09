@@ -8,6 +8,10 @@ import { EventEmitterModule } from '@nestjs/event-emitter';
 import { PaymentsModule } from './payments/payments.module';
 import { DataSourceModule } from './data-source/data-source.module';
 import { UsersModule } from './users/users.module';
+import { ContextIdFactory } from '@nestjs/core';
+import { AggregateByTenantStrategy } from './core/aggregate-by-tenant.strategy';
+
+ContextIdFactory.apply(new AggregateByTenantStrategy());
 
 @Module({
   imports: [
